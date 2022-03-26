@@ -134,4 +134,6 @@ function createChart(stats, container) {
     pokeTypes.innerHTML = '';
     pokeStats.innerHTML = '';
     pokeId.textContent = '';
+    pokeWeight.innerHTML = '';
+    pokeHeight.innerHTML = ''; 
 }
