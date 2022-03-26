@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex LaunchX</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5fb2fecceb.js" crossorigin="anonymous"></script> 
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+
+
+    <!-- Main section -->
+    <section class="section container">
+  
+          <div class="row">
+            <img class="logo" src="img/logo.png">  
+            
+            <img class="logo2" src="img/pokedex.png">
+            <img class="logo2" src="img/launchX.png">
+            
+              <div class="row">
+                <div class="input-field col s9 center">
+                    <input type="text" placeholder="Pokemon Name/ID" id="pokeInput" name="pokeInput" autofocus onkeypress="enterKeyPressed(event)"> 
+                    <!-- <label for="input1">Pokémon Name/ID</label> -->
+                </div>
+                <div class="input-field col s3">
+                    <button id="btnFind" class="btn-floating btn-large waves-effect waves-light" onclick="fetchPokemon()"><i class="fas fa-search"></i>Cambiar Pokemon</button>
+                </div>
+              </div>
+          </div>
+
+<!-- Pokemon -->
+  <div class="card hoverable s12">
+        <div poke-card class="poke-card">
+            <div poke-name class="card-title">Pokedex</div>
+            <div poke-id></div>
+            <div poke-img-container class="img-container">
+                <img poke-img class="poke-img" src="https://cdn-icons-png.flaticon.com/512/528/528101.png?w=740" alt="Pokemon" width="150px" id="pokeImg">
+            </div>
+            
+            <div poke-weight class="poke-weight"></div>
+            <div poke-height class="poke-height"></div>
+
+            <div poke-types class="poke-types"></div>
+            
+            <div stats-graph class="stats-graph"></div>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+    <footer>
+        <!-- Enviar enter -->
+        <script>
+            function enterKeyPressed(event) {
+               if (event.keyCode == 13) {
+                  fetchPokemon();
+                  return true;
+               } else {
+                  return false;
+               }
+            }
+         </script>
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <!-- Materialize JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- CanvasJS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+      <!-- Site script -->
+        <script src="js/app.js"></script>
+    </footer>
+</body>
+</html>
