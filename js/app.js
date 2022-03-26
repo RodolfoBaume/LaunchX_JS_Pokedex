@@ -7,9 +7,7 @@
     const pokeHeight = document.querySelector('[poke-Height]')
     const pokeTypes = document.querySelector('[poke-types]');
     const pokeStats = document.querySelector('[stats-graph]')
-    const pokeInput = document.getElementById("pokeInput");
-
-
+   
     const typeColors = {
     normal: "#A8A878",
     fire: "#F08030",
@@ -33,7 +31,7 @@
 };
 
 const fetchPokemon = () =>{
-    
+    const pokeInput = document.getElementById("pokeInput");
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeInput.value.toLowerCase()}`;
     fetch(url).then((resp) => {
         if(resp.status != "200"){
@@ -47,7 +45,6 @@ const fetchPokemon = () =>{
         createPokemon(data);          
     })
 }
-
 
 const createPokemon = (pokemon) => {
     pokeName.textContent = pokemon.name.toUpperCase();
